@@ -9,7 +9,7 @@
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 102,
+						"X": 116,
 						"Y": 20
 					}
 				}
@@ -18,7 +18,7 @@
 		"model": {
 			"scriptMode": "manual",
 			"workspaceLeft": 0,
-			"workspaceTop": 0,
+			"workspaceTop": 4,
 			"lastScriptLocation": {
 				"Users": {
 					"computed": "Users/Users-events.js",
@@ -143,5 +143,6 @@
 				}
 			]
 		}
-	]
+	],
+	"type": []
 }
