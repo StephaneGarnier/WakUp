@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?><permissions>
-	<allow action="read" groupName="Users" groupID="51CF20AB969D4EEA9E8D92FB83860ABD" resource="Model.Users" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Users" temporaryForcePermissions="false" type="dataClass"/>
-	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Users" temporaryForcePermissions="false" type="dataClass"/>
 	<allow action="execute" groupName="Users" groupID="51CF20AB969D4EEA9E8D92FB83860ABD" resource="Model.Users.edit" temporaryForcePermissions="false" type="method"/>
 	<allow action="execute" groupName="Users" groupID="51CF20AB969D4EEA9E8D92FB83860ABD" resource="Model.Users.changePassword" temporaryForcePermissions="false" type="method"/>
-	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model.Users" temporaryForcePermissions="false" type="dataClass"/>
+	<allow action="read" groupName="Users" groupID="51CF20AB969D4EEA9E8D92FB83860ABD" resource="Model" temporaryForcePermissions="false" type="model"/>
+	<allow action="create" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model" temporaryForcePermissions="false" type="model"/>
+	<allow action="update" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model" temporaryForcePermissions="false" type="model"/>
+	<allow action="remove" groupName="Admin" groupID="01000000000000000000000000000000" resource="Model" temporaryForcePermissions="false" type="model"/>
 </permissions>

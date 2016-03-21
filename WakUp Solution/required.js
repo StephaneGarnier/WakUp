@@ -1,13 +1,13 @@
 function loginFunc(email, password) {
 	
-	
-    var u = ds.Users.find("email=:1",email);
+	var dsDir = solution.getApplicationByName("WakUp").ds;
+
+    var u = dsDir.Users.find("email=:1",email);
     
     if (!u) {
         return false;
     }
     else {    	
-    	var token = currentSession().promoteWith("Admin");
         if (u.password == password) {
         	
            	var theGroups = [];

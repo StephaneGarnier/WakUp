@@ -18,7 +18,7 @@
 		"model": {
 			"scriptMode": "manual",
 			"workspaceLeft": 0,
-			"workspaceTop": 4,
+			"workspaceTop": 0,
 			"lastScriptLocation": {
 				"Users": {
 					"computed": "Users/Users-events.js",
