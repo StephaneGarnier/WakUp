@@ -1,4 +1,4 @@
-angular.module('app.routes', [])
+angular.module('app.routes', ['wakanda'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -25,13 +25,41 @@ angular.module('app.routes', [])
   .state('profile', {
     url: '/page4',
     templateUrl: 'templates/profile.html',
-    controller: 'profileCtrl'
+    controller: 'profileCtrl',
+    resolve : {
+    	userID: ['$q', '$wakanda', function($q, $wakanda) {
+                    var deferred = $q.defer();
+                        $wakanda.$currentUser().$promise.then(function(event) {
+                            if (event.result === null) {
+                                deferred.reject(false);
+                            }
+                            else {
+                                deferred.resolve(event.result.ID);
+                            }
+                        }); 
+                   return deferred.promise;
+        }]
+    }
   })
 
   .state('editProfile', {
     url: '/page5',
     templateUrl: 'templates/editProfile.html',
-    controller: 'editProfileCtrl'
+    controller: 'editProfileCtrl',
+    resolve : {
+    	userID: ['$q', '$wakanda', function($q, $wakanda) {
+                    var deferred = $q.defer();
+                        $wakanda.$currentUser().$promise.then(function(event) {
+                            if (event.result === null) {
+                                deferred.reject(false);
+                            }
+                            else {
+                                deferred.resolve(event.result.ID);
+                            }
+                        }); 
+                   return deferred.promise;
+        }]
+    }
   })
 
 $urlRouterProvider.otherwise('/page1')

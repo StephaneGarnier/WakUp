@@ -1,27 +1,1 @@
-<ion-view title="CreateAccount">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <form class="list">
-            <label class="item item-input">
-                <span class="input-label">firstname</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-input">
-                <span class="input-label">lastname</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-input">
-                <span class="input-label">email</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Password</span>
-                <input type="password" placeholder="">
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Confirm password</span>
-                <input type="password" placeholder="">
-            </label>
-        </form>
-        <a ui-sref="profile" id="createAccount-button4" class="button button-positive  button-block">Register</a>
-    </ion-content>
-</ion-view>
+<ion-view title="Create an account">    <ion-content overflow-scroll="true" padding="true" class="has-header narrow background">    	<section id="content">	        <form class="list narrow">	            <label class="item item-input onBlack">	                <input type="text" placeholder="Firstname" ng-model="user.firstname">	            </label>	            <label class="item item-input onBlack">	                <input type="text" placeholder="Last name" ng-model="user.lastname">	            </label>	            <label class="item item-input onBlack">	                <input type="text" placeholder="E-mail"  ng-model="user.email">	            </label>	            <label class="item item-input onBlack">	                <input type="password" placeholder="Password"  ng-model="user.passwordtoconfirm">	            </label>	            <label class="item item-input onBlack">	                <input type="password" placeholder="Confirm password"  ng-model="user.password">	            </label>	            <a id="createAccount-button4" class="button button-block formValidation icon-right ion-ios-checkmark-empty" ng-click="create()">Register</a>	        </form>        </section>    </ion-content></ion-view>

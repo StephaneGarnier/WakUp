@@ -1,22 +1,1 @@
-<ion-view title="Profile">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <form class="list">
-            <div style="line-height: 250px; border: 1px solid rgb(238, 238, 238); border-radius: 3px; text-align: center; background-color: rgb(255, 255, 255);">
-                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-            </div>
-            <label class="item item-input">
-                <span class="input-label">firstname</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-input">
-                <span class="input-label">lastname</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-input">
-                <span class="input-label">email</span>
-                <input type="text" placeholder="">
-            </label>
-        </form>
-        <a ui-sref="editProfile" id="profile-button5" class="button button-positive  button-block">Edit</a>
-    </ion-content>
-</ion-view>
+<ion-view cache-view="false" title="Profile">    <ion-content overflow-scroll="true" padding="false" class="has-header">    	<section id="profileBanner">    		<div class="profileAvatar">    			<img ng-src="{{user.photo.uri === undefined ? 'img/avatar.png': user.photo.uri}}"/>    		</div>    	</section>    	    	<section id="content" class="narrow">	    	<div class="profileData">	    		<span class="profilLabel">First name:</span>	    		<span>{{user.firstname}}</span>	    	</div>	    	<div class="profileData">	    		<span class="profilLabel">Last name:</span>	    		<span>{{user.lastname}}</span>	    	</div>	    	<div class="profileData">	    		<span class="profilLabel">E-mail:</span>	    		<span>{{user.email}}</span>	    	</div>	    	<a ui-sref="editProfile" id="profile-button5" class="button button-edit button-block">Edit</a>    	</section>    </ion-content></ion-view>
