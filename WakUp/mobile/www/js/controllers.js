@@ -53,21 +53,22 @@ angular.module('app.controllers', [])
     };
 })
 
-.controller('profileCtrl', function($scope, $wakanda, userID, $state) {
+.controller('profileCtrl', function($scope, $wakanda, currentUser, $state) {
     $wakanda.init().$promise.then(function(ds) {
-        ds.Users.$find(userID).$promise.then(function(event) {
+        ds.Users.$find(currentUser.ID).$promise.then(function(event) {
             $scope.user = event.result;
-            console.log($scope.user);
+            $scope.user.email = currentUser.userName;
         });
     })
 
     
 })
 
-.controller('editProfileCtrl', function($scope, $wakanda, userID, $state) {
+.controller('editProfileCtrl', function($scope, $wakanda, currentUser, $state) {
     $wakanda.init().$promise.then(function(ds) {
-        ds.Users.$find(userID).$promise.then(function(event) {
+        ds.Users.$find(currentUser.ID).$promise.then(function(event) {
             $scope.user = event.result;
+            $scope.user.email = currentUser.userName;
 
         });
     })

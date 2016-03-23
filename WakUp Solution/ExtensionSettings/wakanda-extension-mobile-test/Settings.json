@@ -7,6 +7,6 @@
 	"iosEmulate": "true",
 	"androidBuild": "false",
 	"iosBuild": "true",
-	"webStudioPreview": "true",
-	"webBrowserPreview": "false"
+	"webStudioPreview": "false",
+	"webBrowserPreview": "true"
 }

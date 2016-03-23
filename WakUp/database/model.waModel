@@ -9,8 +9,8 @@
 					"isOpen": "true",
 					"pathVisible": true,
 					"position": {
-						"X": 116,
-						"Y": 20
+						"X": 175,
+						"Y": 101
 					}
 				}
 			}
@@ -39,25 +39,9 @@
 					"kind": "storage",
 					"scope": "public",
 					"unique": true,
-					"autosequence": true,
-					"autogenerate": true,
+					"not_null": true,
 					"type": "uuid",
 					"primKey": true
-				},
-				{
-					"name": "email",
-					"kind": "storage",
-					"matchColumn": "Email,Login",
-					"scope": "public",
-					"unique": true,
-					"type": "string"
-				},
-				{
-					"name": "password",
-					"kind": "storage",
-					"matchColumn": "Password",
-					"scope": "public",
-					"type": "string"
 				},
 				{
 					"name": "firstname",
@@ -88,24 +72,6 @@
 					]
 				},
 				{
-					"name": "role",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "country",
-					"kind": "storage",
-					"scope": "public",
-					"type": "string"
-				},
-				{
-					"name": "resetID",
-					"kind": "storage",
-					"scope": "public",
-					"type": "uuid"
-				},
-				{
 					"name": "photo",
 					"kind": "storage",
 					"scope": "public",
@@ -133,16 +99,8 @@
 					"scope": "public",
 					"from": "$mainModel.Users.methods.edit",
 					"userDefined": true
-				},
-				{
-					"name": "lostPassword",
-					"applyTo": "dataClass",
-					"scope": "public",
-					"from": "$mainModel.Users.methods.lostPassword",
-					"userDefined": true
 				}
 			]
 		}
-	],
-	"type": []
+	]
 }

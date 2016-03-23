@@ -27,14 +27,15 @@ angular.module('app.routes', ['wakanda'])
     templateUrl: 'templates/profile.html',
     controller: 'profileCtrl',
     resolve : {
-    	userID: ['$q', '$wakanda', function($q, $wakanda) {
+    	currentUser: ['$q', '$wakanda', function($q, $wakanda) {
                     var deferred = $q.defer();
                         $wakanda.$currentUser().$promise.then(function(event) {
+                        	console.log(event.result);
                             if (event.result === null) {
                                 deferred.reject(false);
                             }
                             else {
-                                deferred.resolve(event.result.ID);
+                                deferred.resolve(event.result);
                             }
                         }); 
                    return deferred.promise;
@@ -47,14 +48,14 @@ angular.module('app.routes', ['wakanda'])
     templateUrl: 'templates/editProfile.html',
     controller: 'editProfileCtrl',
     resolve : {
-    	userID: ['$q', '$wakanda', function($q, $wakanda) {
+    	currentUser: ['$q', '$wakanda', function($q, $wakanda) {
                     var deferred = $q.defer();
                         $wakanda.$currentUser().$promise.then(function(event) {
                             if (event.result === null) {
                                 deferred.reject(false);
                             }
                             else {
-                                deferred.resolve(event.result.ID);
+                                deferred.resolve(event.result);
                             }
                         }); 
                    return deferred.promise;

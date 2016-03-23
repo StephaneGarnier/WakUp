@@ -24,7 +24,4 @@
 	<file path="./backend/permissions.waPerm">
 		<tag name="permissions"/>
 	</file>
-	<file path="./backend/login.js">
-		<tag name="bootStrap"/>
-	</file>
 </project>

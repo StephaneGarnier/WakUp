@@ -5,7 +5,7 @@ model.Users.methods.create = function(email, firstname, lastname, password) {
             errorMessage: "email is not set"
         }
     }
-    var user = ds.Users.find('email==:1', email);
+    var user = directory.user(email);
     if (user != null) {
         return {
             error: 409,
@@ -16,16 +16,15 @@ model.Users.methods.create = function(email, firstname, lastname, password) {
     ds.startTransaction();
 
     try {
+    	var newUser = directory.addUser(email, password, email);
+    	newUser.putInto("Users");
+    	directory.save();
         var user = ds.Users.createEntity();
 
-        user.email = email;
         user.firstname = firstname;
         user.lastname = lastname;
-        user.password = password;
-        user.role = "Users";
-
+        user.ID = newUser.ID;
         user.save();
-
     }
     catch (e) {
 
@@ -46,7 +45,8 @@ model.Users.methods.changePassword = function(ID, oldpassword, newpassword) {
     var curSession = currentSession();
     var currUser = curSession.user;
     if (ID == currUser.ID) {
-        var user = ds.Users.find('ID==:1', ID);
+    	var user = directory.user(ID);
+        //var user = ds.Users.find('ID==:1', ID);
         if (user == null) {
             return {
                 error: 409,
@@ -54,8 +54,8 @@ model.Users.methods.changePassword = function(ID, oldpassword, newpassword) {
             }
         }
         else {
-            user.password = newpassword;
-            user.save();
+        	user.setPassword(newpassword);
+        	directory.save();
             return true;
         }
 
