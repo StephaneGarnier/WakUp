@@ -3,8 +3,8 @@ angular.module('app.controllers', [])
 .controller('loginCtrl', function($scope, $wakanda, $state, $ionicPopup) {
 
     $scope.user = {
-        login: "admin",
-        password: "admin"
+        login: "test@test.fr",
+        password: "test"
     };
 
     $scope.login = function() {
