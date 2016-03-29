@@ -3,8 +3,8 @@ angular.module('app.controllers', [])
 .controller('loginCtrl', function($scope, $wakanda, $state, $ionicPopup) {
 
     $scope.user = {
-        login: "test@test.fr",
-        password: "test"
+        login: "",
+        password: ""
     };
 
     $scope.login = function() {
@@ -75,9 +75,9 @@ angular.module('app.controllers', [])
 
     $scope.save = function() {
         $wakanda.init().$promise.then(function(ds) {
-            ds.Users.edit(userID, $scope.user.firstname, $scope.user.lastname).$promise.then(function(event) {
+            ds.Users.edit(currentUser.ID, $scope.user.firstname, $scope.user.lastname).$promise.then(function(event) {
                 if ($scope.user.newpassword !== undefined) {
-                    ds.Users.changePassword(userID, $scope.user.oldpassword, $scope.user.newpassword).$promise.then(function(event) {
+                    ds.Users.changePassword(currentUser.ID, $scope.user.oldpassword, $scope.user.newpassword).$promise.then(function(event) {
                         $state.go("profile");
                     });
                 }
